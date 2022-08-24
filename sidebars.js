@@ -67,6 +67,7 @@ module.exports = {
         "develop/network-details/technical-requirements",
         "develop/network-details/full-node-deployment",
         "develop/network-details/full-node-binaries",
+        "develop/network-details/full-node-docker",
         "develop/network-details/snapshot-instructions-heimdall-bor",
         "develop/network-details/network-rpc-endpoints",
       ],
@@ -124,7 +125,7 @@ module.exports = {
         "develop/wallets/walletconnect",
         {
           type: "category",
-          label: "Polygon Web Wallet",
+          label: "Polygon Wallet Suite",
           link: {
             type: "generated-index",
           },
@@ -522,12 +523,8 @@ module.exports = {
             type: "generated-index",
           },
           items: [
-            "develop/the-graph",
-            {
-              type: "link",
-              label: "Covalent",
-              href: "https://www.covalenthq.com/docs/api/",
-            },
+            "develop/data/the-graph",
+            "develop/data/covalent",
           ],
         },
         "develop/dapp-fauna-polygon-react",
@@ -578,6 +575,7 @@ module.exports = {
 
   maintain: [
     "maintain/validate/validator-index",
+    "maintain/validate/validator-responsibilities",
     {
       type: "category",
       label: "Validator Overview",
@@ -867,6 +865,7 @@ module.exports = {
   avail: [
     "avail/introduction/what-is-avail",
     "avail/architecture/avail-system-overview",
+    "avail/architecture/avail-consensus",
     "avail/how-tos/avail-quick-start",
     "avail/node/avail-node-management",
     "avail/faq",
@@ -881,6 +880,7 @@ module.exports = {
         type: "generated-index",
       },
       items: [
+        "nightfall/deployments/versions",
         "nightfall/deployments/mainnet",
         "nightfall/deployments/testnet",
       ],
@@ -901,23 +901,12 @@ module.exports = {
           items: [
             "nightfall/protocol/actors",
             "nightfall/protocol/contracts",
-            "nightfall/protocol/circuits",
             "nightfall/protocol/commitments",
             "nightfall/protocol/secrets",
+            "nightfall/protocol/circuits",
             "nightfall/protocol/protocol"
           ]
         },
-        {
-          type: "category",
-          label: "Proposers & Challengers",
-          link: {
-            type: "generated-index",
-          },
-          items: [
-            "nightfall/protocol/proposers",
-            "nightfall/protocol/challengers"
-          ]
-        }
       ]
     },
     {
@@ -927,7 +916,9 @@ module.exports = {
         type: "generated-index",
       },
       items: [
-        "nightfall/tools/nightfall-wallet"
+        "nightfall/tools/nightfall-wallet",
+        "nightfall/tools/explorer",
+        "nightfall/tools/nightfall-sdk"
       ]
     },
     "nightfall/faq/faq",
@@ -940,7 +931,7 @@ module.exports = {
       "faq/commit-chain-multisigs",
       "maintain/delegate/delegator-faq",
       "maintain/validate/faq/validator-faq",
-      // "faq/staking-tutorials",
+      "faq/staking-faq",
       {
         type: "category",
         label: "Wallet FAQs",
@@ -961,24 +952,34 @@ module.exports = {
       {
           type: "category",
           label: "Get started",
+          link: {
+            type: "generated-index",
+          },
           items: [
               "edge/get-started/installation",
               "edge/get-started/set-up-ibft-locally",
               "edge/get-started/set-up-ibft-on-the-cloud",
               "edge/get-started/cli-commands",
               "edge/get-started/json-rpc-commands",
+              "edge/get-started/terraform-aws-deployment",
           ]
       },
       {
           type: "category",
           label: "Configuration",
+          link: {
+            type: "generated-index",
+          },
           items: [
               "edge/configuration/sample-config",
               "edge/configuration/manage-private-keys",
-              "edge/configuration/enable-metrics",
+              "edge/configuration/prometheus-metrics",
               {
                   type: "category",
                   label: "Secret Managers",
+                  link: {
+                    type: "generated-index",
+                  },
                   items: [
                       "edge/configuration/secret-managers/set-up-aws-ssm",
                       "edge/configuration/secret-managers/set-up-gcp-secrets-manager",
@@ -987,9 +988,13 @@ module.exports = {
               }
           ]
       },
+      "edge/validator-hosting",
       {
           type: "category",
           label: "Working with a node",
+          link: {
+            type: "generated-index",
+          },
           items: [
               "edge/working-with-node/query-json-rpc",
               "edge/working-with-node/query-operator-info",
@@ -999,6 +1004,9 @@ module.exports = {
       {
           type: "category",
           label: "Consensus",
+          link: {
+            type: "generated-index",
+          },
           items: [
               "edge/consensus/poa",
               "edge/consensus/pos-concepts",
@@ -1009,18 +1017,24 @@ module.exports = {
       {
           type: "category",
           label: "Additional features",
+          link: {
+            type: "generated-index",
+          },
           items: [
               {
                   type: "category",
                   label: "Chainbridge",
+                  link: {
+                    type: "generated-index",
+                  },
                   items: [
-                      "edge/additional-features/chainbridge/overview",
-                      "edge/additional-features/chainbridge/requirements",
-                      "edge/additional-features/chainbridge/deploy-contracts",
-                      "edge/additional-features/chainbridge/setup-relayer",
-                      "edge/additional-features/chainbridge/setup-erc20-transfer",
-                      "edge/additional-features/chainbridge/setup-erc721-transfer",
-                      "edge/additional-features/chainbridge/roles-in-bridge"
+                    "edge/additional-features/chainbridge/overview",
+                    "edge/additional-features/chainbridge/definitions",
+                    "edge/additional-features/chainbridge/setup",
+                    "edge/additional-features/chainbridge/setup-erc20-transfer",
+                    "edge/additional-features/chainbridge/setup-erc721-transfer",
+                    "edge/additional-features/chainbridge/use-case-erc20-bridge",
+                    "edge/additional-features/chainbridge/use-case-erc721-bridge",
                   ]
               },
               "edge/additional-features/stress-testing",
@@ -1030,11 +1044,17 @@ module.exports = {
       {
           type: "category",
           label: "Architecture",
+          link: {
+            type: "generated-index",
+          },
           items: [
               "edge/architecture/overview",
               {
                   type: "category",
                   label: "Modules",
+                  link: {
+                    type: "generated-index",
+                  },
                   items: [
                       "edge/architecture/modules/blockchain",
                       "edge/architecture/modules/minimal",
@@ -1045,7 +1065,7 @@ module.exports = {
                       "edge/architecture/modules/consensus",
                       "edge/architecture/modules/storage",
                       "edge/architecture/modules/types",
-                      "edge/architecture/modules/protocol",
+                      "edge/architecture/modules/syncer",
                       "edge/architecture/modules/sealer",
                       "edge/architecture/modules/other-modules"
                   ]
@@ -1054,14 +1074,10 @@ module.exports = {
       },
       {
           type: "category",
-          label: "Concepts",
-          items: [
-              "edge/concepts/ethereum-state"
-          ]
-      },
-      {
-          type: "category",
           label: "Community",
+          link: {
+            type: "generated-index",
+          },
           items: [
               "edge/community/propose-new-feature",
               "edge/community/report-bug"
@@ -1070,18 +1086,39 @@ module.exports = {
       {
           type: "category",
           label: "Performance Reports",
+          link: {
+            type: "generated-index",
+          },
           items: [
               "edge/performance-reports/overview",
               {
                   type: "category",
                   label: "Test History",
+                  link: {
+                    type: "generated-index",
+                  },
                   items: [
+                      "edge/performance-reports/test-history/test-2022-07-04",
                       "edge/performance-reports/test-history/test-2022-03-23",
                       "edge/performance-reports/test-history/test-2022-03-02",
                       "edge/performance-reports/test-history/test-2022-01-21",
+
                   ]
               }
           ]
-      }
+      },
+      {
+        type: "category",
+        label: "FAQ",
+        link: {
+          type: "generated-index",
+        },
+        items: [
+            "edge/faq/validators",
+            "edge/faq/gas",
+            "edge/faq/contracts",
+            "edge/faq/tokens",
+        ]
+    }
   ]
 };

@@ -1,3 +1,6 @@
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 module.exports = {
   title: "Polygon Technology | Documentation",
   tagline: "Welcome to Polygon developer documentation",
@@ -8,6 +11,27 @@ module.exports = {
   projectName: "matic-docs",
   customFields: {
     description: "Build your next blockchain app on Polygon.",
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'ko'],
+    path: 'i18n',
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
+      ko: {
+        label: '한국어',
+        direction: 'ltr',
+        htmlLang: 'ko-KR',
+        calendar: 'gregory',
+        path: 'ko',
+      },
+    },
   },
   plugins: [
     [
@@ -69,7 +93,7 @@ module.exports = {
           {
             to: '/docs/develop/wallets/getting-started',
             from: '/docs/develop/cexs-wallets/cexs',
-          },
+          }
         ],
         createRedirects: function (existingPath) {
           if (existingPath.startsWith('/docs/validate/')) {
@@ -204,17 +228,6 @@ module.exports = {
     },
     copyright: `Copyright © ${new Date().getFullYear()} Polygon Technology`,
     },
-    announcementBar: {
-      id: "support_us",
-      content:
-        '🎉 Polygon Mainnet <a target="_blank" rel="noopener noreferrer" href="/docs/develop/network-details/network"/>is open for developers 🎉! ',
-      backgroundColor: "#8247e5", // Defaults to `#fff`
-      textColor: "#fff", // Defaults to `#000`
-    },
-    // googleAnalytics: {
-    //   trackingID: "UA-141789564-1",
-    //   anonymizeIP: true,
-    // },
     image: "https://matic.network/banners/matic-network-16x9.png",
     prism: {
       theme: require("prism-react-renderer/themes/github"),
@@ -228,14 +241,6 @@ module.exports = {
       apiKey: "757c19b23127e9c6959da7f13b71cfab",
       contextualSearch: false,
       algoliaOptions: {},
-    },
-    announcementBar: {
-      id: 'doc revamp message',
-      content:
-        'The team is revamping the docs site.',
-      backgroundColor: '#AA84ED',
-      textColor: '#0A0B0D',
-      isCloseable: true,
     },
     navbar: {
       hideOnScroll: true,
@@ -307,7 +312,7 @@ module.exports = {
           position: "right",
           items: [
                   {
-                    href: 'https://discord.gg/tCmCbEff66',
+                    href: 'https://discord.com/invite/0xPolygon',
                     label: 'Discord',
                     target: '_blank',
                     rel: null,
@@ -346,8 +351,15 @@ module.exports = {
         },
         {
           label: "Support",
-          href: "https://polygon.technology/developer-support-program/",
           position: "right",
+          items: [
+            {
+              href: 'https://support.polygon.technology/support/home',
+              label: 'End-user support',
+              target: '_blank',
+              rel: null,
+            }
+          ]
         },
         {
           label: "FAQs",
@@ -368,6 +380,12 @@ module.exports = {
                   {
                     to: 'docs/nightfall/faq/',
                     label: 'Nightfall FAQ',
+                    target: '_blank',
+                    rel: null,
+                  },
+                  {
+                    to: 'docs/edge/faq/validators/',
+                    label: 'Edge FAQ',
                     target: '_blank',
                     rel: null,
                   }
@@ -411,6 +429,8 @@ module.exports = {
           path: "docs",
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
