@@ -131,7 +131,7 @@ polygon-edge ibft switch --chain ./genesis.json --type PoS --ibft-validator-type
 
 ### 3. Register BLS Public Key in staking contract
 
-After fork is added and validators are restarted, each validator needs to call staking contract to register BLS Public Key. This must be done after the height specified in `--deployment` before the height specified in `--from`.
+After the fork is added and validators are restarted, each validator needs to call staking contract to register BLS Public Key. This must be done after the height specified in `--deployment` before the height specified in `--from`.
 
 The script to register BLS Public Key is defined in [Staking Smart Contract repo](https://github.com/0xPolygon/staking-contracts). 
 
