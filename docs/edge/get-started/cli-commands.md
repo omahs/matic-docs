@@ -704,6 +704,25 @@ Sets the ID of the chain. Default: `100`.
 
 ---
 
+<h4><i>ibft-validator-type</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--ibft-validator-type IBFT_VALIDATOR_TYPE]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --ibft-validator-type ecdsa
+
+  </TabItem>
+</Tabs>
+
+Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `ecdsa`.
+
+---
+
 <h4><i>ibft-validators-prefix-path</i></h4>
 
 <Tabs>
@@ -1167,6 +1186,63 @@ Specifies the height of contract deployment. Only available with PoS.
 
 ---
 
+<h4><i>ibft-validator-type</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--ibft-validator-type IBFT_VALIDATOR_TYPE]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --ibft-validator-type ecdsa
+
+  </TabItem>
+</Tabs>
+
+Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `ecdsa`.
+
+---
+
+<h4><i>ibft-validators-prefix-path</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--ibft-validators-prefix-path IBFT_VALIDATORS_PREFIX_PATH]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --ibft-validators-prefix-path test-chain-
+
+  </TabItem>
+</Tabs>
+
+Prefix path for folder directory of as IBFT validators used after the fork. Needs to be present if the flag `ibft-validator` is omitted. Available only in PoA mode.
+
+---
+
+<h4><i>ibft-validator</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--ibft-validator IBFT_VALIDATOR_LIST]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --ibft-validator 0xC12bB5d97A35c6919aC77C709d55F6aa60436900
+
+  </TabItem>
+</Tabs>
+
+Sets passed in addresses as IBFT validators used after the fork. Needs to be present if the flag `ibft-validators-prefix-path` is omitted. Available only in PoA mode.
+
+---
+
 <h4><i>max-validator-count</i></h4>
 
 <Tabs>
@@ -1482,6 +1558,63 @@ Sets the path to the SecretsManager config file. Used for Hashicorp Vault. If om
 </Tabs>
 
 Sets the directory for the Polygon Edge data if the local FS is used.
+
+---
+
+<h4><i>ecdsa</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    secrets init [--ecdsa FLAG]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    secrets init --ecdsa true
+
+  </TabItem>
+</Tabs>
+
+Sets the flag indicating whether to generate an ECDSA key. Default: `true`.
+
+---
+
+<h4><i>network</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    secrets init [--network FLAG]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    secrets init --network true
+
+  </TabItem>
+</Tabs>
+
+Sets the flag indicating whether to generate a Libp2p Network key. Default: `true`.
+
+---
+
+<h4><i>bls</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    secrets init [--bls FLAG]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    secrets init --bls false
+
+  </TabItem>
+</Tabs>
+
+Sets the flag indicating whether to generate a BLS key. Default: `false`.
 
 ### secrets generate flags
 

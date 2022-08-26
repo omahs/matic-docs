@@ -1,7 +1,7 @@
 ---
 id: bls
 title: BLS
-description: "hoge"
+description: "Explanation and instructions regarding BLS mode."
 keywords:
   - docs
   - polygon
