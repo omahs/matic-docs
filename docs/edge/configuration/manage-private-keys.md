@@ -60,7 +60,7 @@ It is located in `keystore/libp2p.key`, and adheres to the [key format](/docs/ed
 
 The private key file mentioned about BLS is used in the consensus layer to aggregate committed seals. The size of committed seals aggregated by BLS is less than the committed seals signed by ECDSA.
 
-BLS feature is optional and you can choose whether to use BLS or not. Refer [BLS](/docs/edge/consensus/bls) for more details.
+The BLS feature is optional and, you can choose whether to use BLS or not. Refer [BLS](/docs/edge/consensus/bls) for more details.
 
 ## Import / Export
 
