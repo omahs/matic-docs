@@ -106,7 +106,7 @@ The following steps are required in order to enable BLS in PoS chain.
 
 ### 1. Generate BLS key
 
-As mentioned above, `secrets init` with `--bls` flag can generate BLS key. In order to keep existing ECDSA and Network key and add a new BLS key, `--ecdsa` and `--network` needs to be disabled.
+As mentioned above, `secrets init` with `--bls` flag can generate BLS key. In order to keep existing ECDSA and Network key and add a new BLS key, `--ecdsa` and `--network` need to be disabled.
 
 ```bash
 polygon-edge secrets init --bls --ecdsa=false --network=false
