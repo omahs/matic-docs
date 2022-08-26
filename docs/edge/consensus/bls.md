@@ -144,7 +144,7 @@ PRIVATE_KEYS=0x...
 BLS_PUBLIC_KEY=0x...
 ```
 
-The following command register BLS Public Key given in `.env` to the contract.
+The following command register the BLS Public Key given in `.env` to the contract.
 
 ```bash
 npm run register-blskey
