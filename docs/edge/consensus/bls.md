@@ -48,7 +48,7 @@ Node ID              = 16...
 polygon-edge genesis --consensus ibft --ibft-validator-type bls --ibft-validators-prefix-path test-chain- --bootnode /ip4/127.0.0.1/tcp/10001/p2p/[NODE_ID_1] 
 ```
 
-If the data directories are not in locally, you can specify validator address and BLS Public Key for `--ibft-validator` flag. The format of the value is `[ADDRESS_HEX]:[BLS_PUBLIC_KEY_HEX]` whose values are displayed in `secrets init` command's result.
+If the data directories are not in locally, you can specify the validator address and BLS Public Key for `--ibft-validator` flag. The format of the value is `[ADDRESS_HEX]:[BLS_PUBLIC_KEY_HEX]` whose values are displayed in `secrets init` command's result.
 
 ```bash
 polygon-edge genesis --consensus ibft --ibft-validator-type bls --ibft-validator [VALIDATOR_ADDRESS]:[VALIDATOR_BLS_PUBLIC_KEY] test-chain- --bootnode /ip4/127.0.0.1/tcp/10001/p2p/[NODE_ID]
@@ -87,7 +87,7 @@ Node ID              = 16...
 
 `ibft switch` command adds fork setting, which enables BLS in the middle, into `genesis.json`.
 
-For PoA chain, validators need to be given in the command. As with the way of `genesis` command, `--ibft-validators-prefix-path` or `--ibft-validator` flags can be used to specify validator.
+For PoA chain, validators need to be given in the command. As with the way of `genesis` command, `--ibft-validators-prefix-path` or `--ibft-validator` flags can be used to specify the validator.
 
 Specify the height from which the chain starts BLS mode for `--from`.
 
