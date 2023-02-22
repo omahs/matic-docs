@@ -1,6 +1,6 @@
 ---
 id: wallet-bridge-faq
-title: Wallet <> Bridge FAQs
+title: Wallet <> Bridge FAQ
 description: Build your next blockchain app on Polygon.
 keywords:
   - docs
@@ -39,17 +39,31 @@ Metamask, Coinbase, Bitski Wallet, Venly and WalletConnect are the currently sup
 There are many reasons why this might be happening. We suggest that you **try another time**, **use another browser** or, if any of these doesn’t help, **[contact our support team](https://support.polygon.technology/support/home)**.
 
 ## How can I deposit Funds from Ethereum to Polygon using Polygon Wallet Suite.
-Please follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#depositing-funds-from-ethereum-to-polygon).
+Please watch the video below or follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#depositing-funds-from-ethereum-to-polygon).
 
+<video loop autoplay width="70%" height="70%" controls="true" >
+  <source type="video/mp4" src="/img/wallet/v3/deposit/deposit-polygon-wallet.mp4"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
 
 ## How can I withdraw funds from Polygon to Ethereum via PoS Bridge using Polygon Wallet Suite?
-Please follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#withdrawing-funds-from-polygon-back-to-ethereum-on-pos-bridge).
+Please watch the video below or follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#withdrawing-funds-from-polygon-back-to-ethereum-on-pos-bridge).
+
+<video loop autoplay width="70%" height="70%" controls="true" >
+  <source type="video/mp4" src="/img/wallet/v3/pos/withdraw-polygon-wallet.mp4"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
 
 ## How can I withdraw funds from Polygon to Ethereum via Plasma Bridge using Polygon Wallet Suite?
-Please follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#withdrawing-funds-from-polygon-back-to-ethereum-on-plasma-bridge).
+Please watch the video below or follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#withdrawing-funds-from-polygon-back-to-ethereum-on-plasma-bridge).
+
+<video loop autoplay width="70%" height="70%" controls="true" >
+  <source type="video/mp4" src="/img/wallet/v3/plasma/withdraw-plasma-v3.mov"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
 
 ## How to add a new or custom token to Polygon Wallet Token list?
-Please follow [this tutorial](/docs/faq/adding-a-custom-token).
+Please follow  [this tutorial](/docs/faq/adding-a-custom-token).
 
 ## How do I find the token contract?
 
@@ -59,7 +73,7 @@ The token contract address will be required when you are trying to add a new or 
 
 You need to manually add the custom token address to Metamask.
 
-Open Metamask and scroll down to click on **Import tokens**.
+Open MetaMask and scroll down to click on **Import tokens**.
 
 <div align="center">
 <img src={useBaseUrl("img/wallet-bridge/wallet-faq-3.png")} width="400" />
@@ -111,8 +125,8 @@ The transaction might be dropped due to the following reasons:
 You can proceed with the dropped transactions in the following ways:
  
 1. If your transaction is stuck for more than an hour, a **Try Again** button will be shown. You can click on the **Try Again** button to complete the same transaction. You can refer to this video for more information on how to use the **Try Again** feature.
-2. Please check your Metamask wallet as well because sometimes transactions might be dropped due to queued-up transactions in the Metamask. In that case, clear the queued-up transactions or re-install the Metamask in the same browser.
-3. You can install the Metamask in an alternate browser and then try to complete the transaction using Polygon Wallet Suite.
+2. Please check your MetaMask wallet as well because sometimes transactions might be dropped due to queued-up transactions in the Metamask. In that case, clear the queued-up transactions or re-install the MetaMask in the same browser.
+3. You can install the MetaMask in an alternate browser and then try to complete the transaction using Polygon Wallet Suite.
 4. You can also use this link to complete the pending withdrawal transaction. Paste the transaction hash in the search option and click the **Confirm Exit** button to complete the transaction.
 
 ## What do I do if the deposit is confirmed but the balance is not getting updated?
@@ -194,7 +208,7 @@ Yes, we support the following hardware wallets:
 1. Trezor
 2. Ledger
 
-Users can connect their Hardware wallet option on Metamask and proceed with their transaction.
+Users can connect their Hardware wallet option on MetaMask and proceed with their transaction.
 Here is the link to connect the hardware wallet on Metamask:
 https://metamask.zendesk.com/hc/en-us/articles/4408552261275
 
@@ -242,7 +256,7 @@ However, if you are using any external service that is not owned by Polygon, we 
 
 ## I have a token withdrawal issue with OpenSea or any other application which uses polygon bridge.
 
-If you have an issue with your withdrawal transaction being stuck, Polygon offers the withdraw bridge with https://polygon-withdraw.matic.network/ to help get you off the ground if you have your burn hash. With this tool, you're quickly onboarded and the issue will be resolved. Other questions concerning your transaction with OpenSea and other dApps will have to be handled by the application team.
+If you have an issue with your withdrawal transaction being stuck, Polygon offers the withdraw bridge with [https://withdraw.polygon.technology](https://withdraw.polygon.technology) to help get you off the ground if you have your burn hash. With this tool, you're quickly onboarded and the issue will be resolved. Other questions concerning your transaction with OpenSea and other dApps will have to be handled by the application team.
 
 ## I have been scammed. How will I retrieve my tokens?
 
@@ -259,7 +273,12 @@ If you still have some remaining funds, transfer them immediately to a new walle
 As the Ethereum Network has Goerli as its test network, the Polygon Mainnet has Mumbai. All transactions on this test network will be indexed on the Mumbai Explorer.
 
 ## How can I swap my tokens for other tokens?
-Please follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#token-swap).
+Please watch the video below or follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#token-swap).
+
+<video loop autoplay width="70%" height="70%" controls="true" >
+  <source type="video/mp4" src="/img/wallet/v3/swap-token.mp4"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
 
 ## The Token Swap is too slow.
 
@@ -269,7 +288,12 @@ If you are trying to swap tokens and it is taking too long, you could try the sa
 Only MATIC.
 
 ## How can I swap my token for gas?
-Please follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#swap-for-gas).
+Please watch the video below or follow [this tutorial](/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide.md#swap-for-gas).
+
+<video loop autoplay width="70%" height="70%" controls="true" >
+  <source type="video/mp4" src="/img/wallet/v3/swap-gas.mp4"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
 
 ## Which tokens can be used to swap for gas?
 Only these Tokens are supported for ‘Swap for Gas’: ETH, USDC, USDT, DAI, AAVE, LINK, WBTC, UNI, GHST, TEL, EMON, and COMBO.

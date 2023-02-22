@@ -6,14 +6,14 @@ description: Build your next blockchain app on Polygon.
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://wiki.polygon.technology/img/polygon-wiki.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### How to stake tokens on Polygon?
 
-For Staking you would need to have funds on the Ethereum Mainnet (more information [here](https://etherscan.io/gastracker)). Log into Metamask on the Ethereum network using the Staking Dashboard. https://staking.polygon.technology/
+For Staking you would need to have funds on the Ethereum Mainnet (more information [here](https://etherscan.io/gastracker)). Log into MetaMask on the Ethereum network using the Staking Dashboard. https://staking.polygon.technology/
 
 Please watch this video for a graphical illustration of how this works:
 
@@ -38,7 +38,11 @@ Check if you have funds on the Main Ethereum Network, to delegate your tokens. A
 
 ### I am unable to view the Staking tab. How do I access Staking?
 
-Once logged into https://wallet.polygon.technology/ you need to  click on apps > staking. Users will be landed on the staking overview page. Reference for guide:
+You just need to access **https://staking.polygon.technology/**, where you will see the following landing page:
+
+<img src={useBaseUrl("img/staking_faq/staking-lp.png")} height="500px"/>
+
+Alternatively, once logged into the [Polygon Wallet Suite](https://wallet.polygon.technology/), you can click on **More Apps > Staking**. Users will be landed on the **Staking Overview** page. Reference for guide:
 
 <img src={useBaseUrl("img/staking_faq/staking-app.png")} height="500px"/>
 
@@ -72,7 +76,7 @@ This period applies to the originally delegated amount and re-delegated amounts.
 ### How to restake rewards?
 
 Go to “My Account” to check "Your Delegations".
-Clicking on "Restake Reward" will ask you for confirmation from your Metamask account. Once you confirm the transaction, only then the restake transaction would be complete.
+Clicking on "Restake Reward" will ask you for confirmation from your MetaMask account. Once you confirm the transaction, only then the restake transaction would be complete.
 
 `Step 1` <br/>
 <img src={useBaseUrl("img/staking_faq/restake-rewards1.png")} height="300px"/><br/>
@@ -128,13 +132,13 @@ Once the **unbonding period is complete**, the Claim Stake button will be enable
 Please watch the video for a graphical illustration of how this works:
 
 <video width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="/img/staking_faq/ClaimingStake.mov"></source>
+  <source type="video/mp4" src="/img/staking_faq/claiming-stake.mov"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
 ### Are hardware wallets supported?
 
-Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on Metamask and connect your Hardware wallet and then continue the delegation process.
+Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on MetaMask and connect your Hardware wallet and then continue the delegation process.
 
 ### Why can’t I stake directly from Binance?
 
@@ -179,10 +183,10 @@ Please watch the video for a graphical illustration of how this works:
 
 Chrome, Firefox, and Brave.
 
-### Nothing happens when I try to log in or my Metamask is stuck at confirming after logging in. What do I do?
+### Nothing happens when I try to log in or my MetaMask is stuck at confirming after logging in. What do I do?
 
 Check for the following:
 - If you’re using Brave, please turn off the option for “Use Crypto Wallets” in the settings panel.
 - Check if you are logged into Metamask.
-- Check if you are logged into Metamask with Trezor/Ledger. You need to additionally turn on permission to call contracts on your Ledger device, if not enabled already.
+- Check if you are logged into MetaMask with Trezor/Ledger. You need to additionally turn on permission to call contracts on your Ledger device, if not enabled already.
 - Check your system timestamp. If the system time is not correct, you will need to correct it.

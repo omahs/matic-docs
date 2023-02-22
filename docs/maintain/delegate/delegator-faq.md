@@ -35,11 +35,11 @@ The time taken to complete a transaction depends on the gas fees that you have a
 
 ### Which wallets are currently supported?
 
-Currently, only the Metamask extension on the desktop browser and Coinbase Wallet are supported. Additionally you can use WalletConnect and Walletlink from supported mobile wallets to interact with the Staking UI dashboard on desktop / laptop. We will be gradually adding support for other wallets soon.
+Currently, only the MetaMask extension on the desktop browser and Coinbase Wallet are supported. Additionally you can use WalletConnect and Walletlink from supported mobile wallets to interact with the Staking UI dashboard on desktop / laptop. We will be gradually adding support for other wallets soon.
 
 ### Are hardware wallets supported?
 
-Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on Metamask and connect your Hardware wallet and then continue the delegation process.
+Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on MetaMask and connect your Hardware wallet and then continue the delegation process.
 
 ### Why can’t I stake directly from Binance?
 
@@ -47,13 +47,19 @@ Staking through Binance is not yet supported. There will be an announcement if a
 
 ### I have completed my delegation, where can I check details?
 
-Once you have completed your delegation, wait for 12 block confirmations on Ethereum (~3-5 minutes), then on the Dashboard,you can click on the “My Delegator Details” option on the left-hand side. Or you could also click on “Show Delegator Profile” card.
+Once you have completed your delegation, wait for 12 block confirmations on Ethereum (approx. 3-5 minutes), then on the Dashboard, you can click on **My Account**.
+
+<div>
+  <img src={useBaseUrl("/img/delegator-faq/my-account.png")} />
+</div>
 
 ### Where can I check my rewards?
 
-On the Dashboard, you can click on the “My Delegator Details” option on the left-hand side. Or you could also click on “Show Delegator Profile” card.
+On the Dashboard, you can click on the **My Account** option on the left-hand side. 
 
-Check the `New Rewards` card on the right. Once you accrue rewards, you can click on the `Details` link to check rewards in detail.
+<div>
+  <img src={useBaseUrl("/img/delegator-faq/my-account.png")} />
+</div>
 
 ### Do I need ETH to pay for Gas fees?
 
@@ -87,7 +93,11 @@ Rewards will be higher, to begin with, and will keep decreasing as the locked su
 
 ### How can I claim my rewards?
 
-You can claim your rewards instantly by clicking on the **New Rewards** card and then clicking on the **Withdraw Rewards** button. This will transfer the rewards accumulated to your delegated account on Metamask.
+You can claim your rewards instantly by clicking on the **Withdraw Reward** button. This will transfer the rewards accumulated to your delegated account on Metamask.
+
+<div>
+  <img src={useBaseUrl("/img/delegator-faq/withdraw-reward.png")} />
+</div>
 
 ### What is the Unbonding period?
 
@@ -100,6 +110,10 @@ No. Once you unbond, you will stop receiving rewards.
 ### How many transactions does the delegation require?
 
 Delegation requires 2 transactions, one after the other. One to **Approve** the request and another to **Deposit**.
+
+<div>
+  <img src={useBaseUrl("/img/delegator-faq/delegate.png")} />
+</div>
 
 ### What does Redelegate Rewards mean?
 
@@ -115,13 +129,13 @@ We are doing a phased rollout of the Polygon Mainnet. Later on, external validat
 
 Chrome, Firefox, and Brave
 
-### My Metamask is stuck at confirming after login, what do I do? Or nothing happens when I try to login?
+### My MetaMask is stuck at confirming after login, what do I do? Or nothing happens when I try to login?
 
 Check for the following:
 
 - If you’re using Brave, please turn off the option for **Use Crypto Wallets** in the settings panel.
 - Check if you are logged into Metamask
-- Check if you are logged into Metamask with Trezor/Ledger. You need to additionally turn on permission to call contracts on your Ledger device, if not enabled already.
+- Check if you are logged into MetaMask with Trezor/Ledger. You need to additionally turn on permission to call contracts on your Ledger device, if not enabled already.
 - Check your system timestamp. If the system time is not correct, you will need to correct it.
 
 ### How do I send funds from Binance or other exchanges to Polygon wallet?
@@ -144,7 +158,7 @@ If you have not re-delegated your rewards before delegating additional funds to 
 
 In case you dont want that to happen, re-delegate your rewards before delegating additional funds.
 
-### I have delegated my tokens via Metamask on the Staking dashboard. Do I need to keep my system or device on?
+### I have delegated my tokens via MetaMask on the Staking dashboard. Do I need to keep my system or device on?
 
 No. Once your Delegation transactions are confirmed, and you can see your tokens reflected in the **Total Stake** and **New Reward** sections, then you are done. There is no need to keep your system or device on.
 
@@ -160,9 +174,23 @@ The Claim Stake button will only be enabled when your unbonding period is comple
 
 Yes, under the Claim Stake button you would see a note on how many checkpoints are pending before the Claim Stake button would be enabled. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
+<div>
+  <img src={useBaseUrl("/img/delegator-faq/unbond.png")} />
+</div>
+
 ### How do I switch my delegation from Foundation Nodes to External nodes?
 
 You can switch your Delegation using the **Move Stake** option on the Staking UI. This will switch your Delegation from the Foundation node to any other external node of your choice.
+
+<div align="center">
+  <img src={useBaseUrl("/img/delegator-faq/move-stake.png")} width="500" />
+</div>
+
+You will see a list of other validators:
+
+<div>
+  <img src={useBaseUrl("/img/delegator-faq/validators.png")} />
+</div>
 
 ### Will there be any ubonding period when I switch Delegation from Foundation nodes to external nodes?
 

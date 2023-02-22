@@ -44,13 +44,13 @@ Run the following commands to install Erigon:
 ```bash
 git clone --recurse-submodules -j8 https://github.com/maticnetwork/erigon.git
 cd erigon
-git checkout v0.0.2
+git checkout v0.0.5
 make erigon
 ```
 
 This should create the binary at `./build/bin/erigon`
 
-Use the tag `v0.0.2` on our forked repo to have a stable version. 
+Use the tag `v0.0.5` on our forked repo to have a stable version. 
 
 ### How to Start
 
@@ -77,9 +77,9 @@ erigon --chain=mumbai
     erigon --chain=mumbai --bor.heimdall=<your heimdall url> --datadir=<your_data_dir>
     ```
     
-    - If you want to connect to Polygon Mumbai Testnet use: [https://heimdall.api.matic.today](https://heimdall.api.matic.today/)
+    - If you want to connect to Polygon Mumbai Testnet use: [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology)
     
-    - For Polygon Mainnet: [https://heimdall.api.matic.network](https://tendermint.api.matic.network/)
+    - For Polygon Mainnet: [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)
 
 ### Tips for Faster Sync
 

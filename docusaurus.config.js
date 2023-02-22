@@ -87,16 +87,32 @@ module.exports = {
             from: '/docs/integrate/full-node-deployment',
           },
           {
-            to: '/docs/develop/wallets/metamask',
-            from:'/docs/develop/metamask/overview',
-          },
-          {
             to: '/docs/develop/wallets/getting-started',
             from: '/docs/develop/cexs-wallets/cexs',
           },
           {
             to: '/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide',
             from: '/docs/develop/wallets/polygon-web-wallet/web-wallet-v2-guide',
+          },
+          {
+            to: '/docs/faq/general-faq/',
+            from: '/docs/category/faq/'
+          },
+          {
+            to:'/docs/maintain/validate/kb/known-issues',
+            from:'/docs/maintain/validate/faq/known-issues'
+          },
+          {
+            to:'/docs/maintain/validate/kb/how-to',
+            from:'/docs/maintain/validate/faq/how-to'
+          },
+          {
+            to:'/docs/faq/validator-faq',
+            from:'/docs/maintain/validate/faq/validator-faq'
+          },
+          {
+            to:'/docs/maintain/validator/responsibilities',
+            from:'/docs/maintain/validate/validator-responsibilities'
           }
         ],
         createRedirects: function (existingPath) {
@@ -136,10 +152,6 @@ module.exports = {
           {
             label: "Polygon Avail",
             href: "https://polygon.technology/solutions/polygon-avail/"
-          },
-          {
-              label: "Polygon Nightfall",
-              href: "https://polygon.technology/solutions/polygon-nightfall/"
           },
           {
             label: "Polygon Zero",
@@ -222,7 +234,7 @@ module.exports = {
       {
         label: "Ecosystem Careers",
         href: "https://ecosystemjobs.polygon.technology/jobs/"
-    },
+      },
     ]
     },
     ],
@@ -264,26 +276,20 @@ module.exports = {
           position: "right",
           items: [
                   {
-                    href: 'https://wallet.polygon.technology/login?next=%2Fwallet',
+                    href: 'https://wallet.polygon.technology',
                     label: 'PoS Wallet',
                     target: '_blank',
                     rel: null,
                   },
                   {
-                    href: 'https://wallet.polygon.technology/login?next=%2Fbridge',
+                    href: 'https://wallet.polygon.technology/polygon/bridge/deposit',
                     label: 'PoS Bridge',
                     target: '_blank',
                     rel: null,
                   },
                   {
-                    href: 'https://polygon.technology/staking',
+                    href: 'https://staking.polygon.technology/',
                     label: 'PoS Staking',
-                    target: '_blank',
-                    rel: null,
-                  },
-                  {
-                    href: 'https://wallet.polygon.technology/login?next=%2Fwidget-dashboard',
-                    label: 'PoS Widget',
                     target: '_blank',
                     rel: null,
                   },
@@ -294,7 +300,7 @@ module.exports = {
                     rel: null,
                   },
                   {
-                    href: 'https://hermez.io/wallet',
+                    href: 'https://wallet.hermez.io/login',
                     label: 'Hermez Wallet',
                     target: '_blank',
                     rel: null,
@@ -392,12 +398,6 @@ module.exports = {
                   {
                     to: 'docs/avail/faq',
                     label: 'Avail FAQ',
-                    target: '_blank',
-                    rel: null,
-                  },
-                  {
-                    to: 'docs/nightfall/faq/',
-                    label: 'Nightfall FAQ',
                     target: '_blank',
                     rel: null,
                   },

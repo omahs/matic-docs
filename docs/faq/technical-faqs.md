@@ -1,11 +1,11 @@
 ---
 id: technical-faqs
-title: Technical FAQs
+title: Technical FAQ
 description: Build your next blockchain app on Polygon.
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://wiki.polygon.technology/img/polygon-wiki.png
 ---
 
 :::tip Stay in the know
@@ -110,11 +110,11 @@ For Binaries:
 
 1. Copy the Bor keystore file to:
 
-    `~/.bor/keystore/`
+    `/var/lib/bor/keystore/`
 
 2. And password.txt to
 
-    `~/.bor/password.txt`
+    `/var/lib/bor/password.txt`
 
 
 ### 4. Error: Wrong Block.Header.AppHash. Expected xxxx
@@ -257,9 +257,9 @@ For example,
     heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
 
 
-### 18. Whats the difference between `~.heimsdall` and `/etc/heimsdall?`
+### 18. Whats the difference between `/var/lib/heimdall` and `/etc/heimdall?`
 
-`~/.heimsdall` is the heimdall dir when you use the binary installation method. `/etc/heimdall` is for the Linux package installation method.
+`/var/lib/heimdall` is the heimdall dir when you use the binary installation method. `/etc/heimdall` is for the Linux package installation method.
 
 
 ### 19. When I make the stake transaction, I'm getting "Gas Exceeded" error
@@ -282,7 +282,7 @@ We are progressively adding validators throughout the course of Stage 1 event. W
 
 For binaries:
 
-    ~/.heimdalld/config folder
+    /var/lib/heimdalld/config folder
 
 For Linux package:
 
@@ -298,7 +298,7 @@ Once you have created the API key you need to add the API key in `heimdall-confi
 
 You can add the persistent_peers in the following file:
 
-    ~/.heimdalld/config/config.toml
+    /var/lib/heimdalld/config/config.toml
 
 
 ### 24. “Did you reset Tendermint without resetting your application's data?”
@@ -343,9 +343,9 @@ Delete Bor: `sudo rm -rf /etc/bor/*`
 
 **For Binaries**:
 
-Delete Heimdall: `sudo rm -rf ~/.heimdalld/`
+Delete Heimdall: `sudo rm -rf /var/lib/heimdalld/`
 
-Delete Bor: `sudo rm -rf ~/.bor`
+Delete Bor: `sudo rm -rf /var/lib/bor`
 
 ### 28. What to do when you get "Wrong Block.Header.AppHash." error
 

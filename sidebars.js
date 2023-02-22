@@ -45,9 +45,11 @@ module.exports = {
     "home/faq",
   ],
 
-  delegate: ["maintain/delegate/delegate", "maintain/delegate/delegator-faq"],
+  delegate: ["maintain/delegate/delegate",
+  //"maintain/delegate/delegator-faq"
+  ],
 
-  govern: ["maintain/govern/governance-posv1"],
+  govern: ["maintain/govern/governance-pos"],
 
   develop: [
     "develop/getting-started",
@@ -65,6 +67,7 @@ module.exports = {
         "develop/network-details/full-node-deployment",
         "develop/network-details/full-node-binaries",
         "develop/network-details/full-node-docker",
+        "develop/network-details/full-node",
         "develop/network-details/network-rpc-endpoints",
         {
           type: "category",
@@ -128,7 +131,7 @@ module.exports = {
               },
               items: ["develop/metamask/config-polygon-on-wallet-link"],
             },
-    
+
             {
               type: "category",
               label: "Venly",
@@ -146,7 +149,8 @@ module.exports = {
             "develop/wallets/portis",
             "develop/wallets/torus",
             "develop/wallets/walletconnect",
-            "develop/wallets/slashauth"
+            "develop/wallets/slashauth",
+            "develop/wallets/plaid-wallet-onboard",
           ],
         }
       ],
@@ -457,7 +461,6 @@ module.exports = {
             },
             "develop/ethereum-polygon/pos/deposit-withdraw-event-pos",
             "develop/ethereum-polygon/pos/deployment",
-            "develop/ethereum-polygon/pos/mapping-assets",
             "develop/pos-using-metamask",
           ],
         },
@@ -476,9 +479,9 @@ module.exports = {
             "develop/plasma-using-metamask",
           ],
         },
+        "develop/l1-l2-communication/fx-portal",
         "develop/ethereum-polygon/mintable-assets",
         "develop/l1-l2-communication/state-transfer",
-        "develop/l1-l2-communication/fx-portal",
       ],
     },
     {
@@ -553,16 +556,15 @@ module.exports = {
         type: "generated-index",
       },
       items: [
-        "develop/tools/polygon-faucet",
-        "develop/tools/alchemy-faucet",
-        "develop/tools/polygon-gas-station"
+        "develop/tools/matic-faucet",
+        "develop/tools/polygon-gas-station",
+        "develop/tools/zkevm-gas-station"
       ],
     },
   ],
 
   maintain: [
     "maintain/validate/validator-index",
-    "maintain/validate/validator-responsibilities",
     {
       type: "category",
       label: "Validator Overview",
@@ -612,6 +614,7 @@ module.exports = {
             "maintain/validate/validator-node-system-requirements",
             "maintain/validate/run-validator-binaries",
             "maintain/validate/run-validator-ansible",
+            "maintain/validate/run-validator",
           ],
         },
         {
@@ -623,6 +626,7 @@ module.exports = {
           items: [
             "maintain/port-management",
             "maintain/validate/change-signer-address",
+            "maintain/validate/bloxroute"
           ],
         },
         {
@@ -649,14 +653,23 @@ module.exports = {
         "avail/node/avail-node-management",
         {
           type: "category",
-          label: "FAQ",
+          label: "Knowledge Base",
           link: {
             type: "generated-index",
           },
           items: [
-            "maintain/validate/faq/known-issues",
-            "maintain/validate/faq/how-to",
-            "maintain/validate/faq/validator-faq",
+            "maintain/validate/kb/known-issues",
+            "maintain/validate/kb/how-to",
+            {
+              type: "category",
+              label: "Additional Information",
+              link: {
+                type: "generated-index",
+              },
+              items: [
+                "maintain/validate/kb/additional-info/port-config"
+              ]
+            }
           ],
         },
         "maintain/reporting-issues",
@@ -664,7 +677,6 @@ module.exports = {
       ],
     },
   ],
-
   integrate: [
     "integrate/quickstart",
     {
@@ -987,19 +999,60 @@ module.exports = {
 
   zkEVM: [
     "zkEVM/introduction",
-    "zkEVM/develop",
-    "zkEVM/overview",
-    "zkEVM/proof-of-efficiency",
+    "zkEVM/architecture",
     {
       type: "category",
-      label: "zkNode",
+      label: "zkEVM Protocol",
       link: {
         type: "generated-index"
       },
       items:[
-        "zkEVM/zknode/overview",
-        "zkEVM/zknode/setup-local-node",
-        "zkEVM/zknode/setup-production-node"
+        "zkEVM/protocol/protocol-components",
+        "zkEVM/protocol/state-management",
+        "zkEVM/protocol/consensus",
+        {
+              type: "category",
+              label: "Transaction Life Cycle",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+                "zkEVM/protocol/l2-transaction-cycle-intro",
+                "zkEVM/protocol/transaction-execution",
+                "zkEVM/protocol/transaction-batching",
+                "zkEVM/protocol/transaction-sequencing",
+                "zkEVM/protocol/transaction-aggregation",
+              ]
+        },
+        "zkEVM/protocol/incentive-mechanism",
+        "zkEVM/protocol/upgradability",
+        "zkEVM/protocol/admin-role",
+        {
+              type: "category",
+              label: "Malfunction Resistance",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+                "zkEVM/protocol/sequencer-resistance",
+                "zkEVM/protocol/aggregator-resistance",
+                "zkEVM/protocol/emergency-state",
+              ]
+        },
+        "zkEVM/lx-ly-bridge",
+      ]
+    },
+    "zkEVM/zknode/zknode-overview",
+    {
+      type: "category",
+      label: "How To Guides",
+      link: {
+        type: "generated-index"
+      },
+      items:[
+        "zkEVM/develop",
+        "zkEVM/setup-local-node",
+        "zkEVM/setup-production-node",
       ]
     },
     {
@@ -1009,56 +1062,102 @@ module.exports = {
         type: "generated-index"
       },
       items:[
-        "zkEVM/zkProver/overview",
-        "zkEVM/zkProver/zkprover-design",
-        {
+       {
           type: "category",
-          label: "mFibonacci SM",
+          label: "Introduction",
           link: {
             type: "generated-index"
           },
           items:[
-            "zkEVM/zkProver/mfibonacci-overview",
-            "zkEVM/zkProver/mfibonacci-example",
-            "zkEVM/zkProver/commitment-scheme",
-            "zkEVM/zkProver/verification-scheme",
-            "zkEVM/zkProver/pil-stark",
-            "zkEVM/zkProver/pil-stark-demo",
+            "zkEVM/zkProver/overview",
+            "zkEVM/zkProver/zkprover-design",
           ]
         },
         {
           type: "category",
-          label: "Generic SM",
+          label: "Basics of zkProver",
           link: {
             type: "generated-index"
           },
           items:[
-            "zkEVM/zkProver/intro-generic-sm",
-            "zkEVM/zkProver/exec-trace-correct",
-            "zkEVM/zkProver/ending-program",
-            "zkEVM/zkProver/program-counter"
+            {
+              type: "category",
+              label: "mFibonacci SM",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+                "zkEVM/zkProver/mfibonacci-overview",
+                "zkEVM/zkProver/mfibonacci-example",
+                "zkEVM/zkProver/commitment-scheme",
+                "zkEVM/zkProver/verification-scheme",
+                "zkEVM/zkProver/pil-stark",
+                "zkEVM/zkProver/pil-stark-demo",
+              ]
+            },
+            {
+              type: "category",
+              label: "Generic SM",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+                "zkEVM/zkProver/intro-generic-sm",
+                "zkEVM/zkProver/exec-trace-correct",
+                "zkEVM/zkProver/ending-program",
+                "zkEVM/zkProver/program-counter"
+              ]
+            },
           ]
         },
         {
           type: "category",
-          label: "Storage SM",
+          label: "Secondary State Machines",
           link: {
             type: "generated-index"
           },
           items:[
-            "zkEVM/zkProver/intro-storage-sm",
-            "zkEVM/zkProver/sparse-merkle-tree",
-            "zkEVM/zkProver/simple-smt",
-            "zkEVM/zkProver/detailed-smt-concepts",
-            "zkEVM/zkProver/basic-smt-ops",
-            "zkEVM/zkProver/construct-key-path",
-            "zkEVM/zkProver/storage-sm-mechanism",
-            "zkEVM/zkProver/executor-pil",
+            "zkEVM/zkProver/arithmetic-sm",
+            "zkEVM/zkProver/binary-sm",
+            "zkEVM/zkProver/memory-sm",
+            "zkEVM/zkProver/mem-align-sm",
+            {
+              type: "category",
+              label: "Storage SM",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+                "zkEVM/zkProver/intro-storage-sm",
+                "zkEVM/zkProver/sparse-merkle-tree",
+                "zkEVM/zkProver/simple-smt",
+                "zkEVM/zkProver/detailed-smt-concepts",
+                "zkEVM/zkProver/basic-smt-ops",
+                "zkEVM/zkProver/construct-key-path",
+                "zkEVM/zkProver/storage-sm-mechanism",
+                "zkEVM/zkProver/executor-pil",
+              ]
+            },
+            {
+              type: "category",
+              label: "Hashing SM",
+              link: {
+                type: "generated-index"
+              },
+              items:[
+                "zkEVM/zkProver/intro-hashing-sm",
+                "zkEVM/zkProver/keccak-framework",
+                "zkEVM/zkProver/paddingkk-sm",
+                "zkEVM/zkProver/paddingkk-bit-sm",
+                "zkEVM/zkProver/bits2field-sm",
+                "zkEVM/zkProver/keccakf-sm",
+                "zkEVM/zkProver/poseidon-sm",
+              ]
+            },
           ]
         },
       ]
     },
-    "zkEVM/lx-ly-bridge",
     {
       type: "category",
       label: "zk Assembly",
@@ -1090,100 +1189,16 @@ module.exports = {
     "zkEVM/glossary"
   ],
 
-  nightfall: [
-    "nightfall/introduction/overview",
-    {
-      type: "category",
-      label: "Network Deployments",
-      link: {
-        type: "generated-index",
-      },
-      items: [
-        "nightfall/deployments/versions",
-        "nightfall/deployments/sandbox",
-        "nightfall/deployments/mainnet",
-        "nightfall/deployments/testnet",
-      ],
-    },
-    {
-      type: "category",
-      label: "Protocol",
-      link: {
-        type: "generated-index",
-      },
-      items: [
-        {
-          type: "category",
-          label: "Nightfall Protocol",
-          link: {
-            type: "generated-index",
-          },
-          items: [
-            "nightfall/protocol/actors",
-            "nightfall/protocol/contracts",
-            "nightfall/protocol/commitments",
-            "nightfall/protocol/secrets",
-            "nightfall/protocol/circuits",
-            "nightfall/protocol/protocol",
-          ],
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Tools",
-      link: {
-        type: "generated-index",
-      },
-      items: [
-        "nightfall/tools/nightfall-wallet",
-        "nightfall/tools/explorer",
-        {
-          type: "category",
-          label: "SDK",
-          link: {
-            type: "generated-index",
-          },
-          items: [
-            "nightfall/tools/nightfall-sdk",
-            {
-              type: "category",
-              label: "User SDK",
-              link: {
-                type: "generated-index",
-              },
-              items: [
-                "nightfall/tools/user-sdk-getting-started",
-                "nightfall/tools/user-sdk-installation",
-                "nightfall/tools/user-sdk-api",
-                "nightfall/tools/user-sdk-examples",
-              ],
-            },
-            {
-              type: "category",
-              label: "Proposer SDK",
-              link: {
-                type: "generated-index",
-              },
-              items: ["nightfall/tools/proposer-sdk-installation"],
-            },
-          ],
-        },
-      ],
-    },
-    "nightfall/faq/faq",
-  ],
   faq: [
     "faq/general-faq",
     "faq/technical-faqs",
     // "faq/delegator-faq",
     "faq/commit-chain-multisigs",
-    "maintain/delegate/delegator-faq",
-    "maintain/validate/faq/validator-faq",
+    // "maintain/delegate/delegator-faq",
+    "faq/validator-faq",
     "faq/staking-faq",
     "faq/wallet-bridge-faq",
-    "faq/consensys-framework",
-    "faq/widget-faq",
+    "faq/consensys-framework"
   ],
 
 // #####################################################################
@@ -1228,8 +1243,8 @@ module.exports = {
             "edge/consensus/pos-stake-unstake",
             "edge/consensus/migration-to-pos",
             "edge/consensus/bls",
-          ],
-        },
+            ],
+          },
         {
           type: "category",
           label: "Block production",
@@ -1510,5 +1525,57 @@ module.exports = {
         "polygonid/contracts/overview"
       ]
     }
-  ]
+  ],
+
+  // #####################################################################
+
+  supernets: [
+    "supernets/overview",
+    "supernets/architecture",
+    "supernets/polybft",
+    {
+      type: "category",
+      label: "Core Contracts",
+      link: {
+        type: "generated-index",
+      },
+      items: [
+        "supernets/contracts/state-sender",
+        "supernets/contracts/state-receiver",
+        "supernets/contracts/checkpoint-manager",
+        "supernets/contracts/exit-helper",
+        "supernets/contracts/reward-pool",
+        "supernets/contracts/validator-queue",
+        "supernets/contracts/withdrawal-queue",
+      ],
+    },
+    {
+      type: "category",
+      label: "Bridge",
+      link: {
+        type: "generated-index",
+      },
+      items: [
+        "supernets/bridge/overview",
+        "supernets/bridge/statesync",
+        "supernets/bridge/checkpoint",
+      ],
+    },
+    {
+      type: "category",
+      label: "JSON RPC Commands",
+      link: {
+        type: "generated-index",
+      },
+      items: [
+        "supernets/api/json-rpc-eth",
+        "supernets/api/json-rpc-net",
+        "supernets/api/json-rpc-web3",
+        "supernets/api/json-rpc-txpool",
+        "supernets/api/json-rpc-debug",
+      ],
+    },
+    "supernets/supernets-faq",
+  ],
+
 };

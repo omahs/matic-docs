@@ -20,7 +20,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Steps in this guide involve waiting for the **Heimdall** and **Bor** services to fully sync. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours.
 For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](https://forum.polygon.technology/t/snapshot-instructions-for-heimdall-and-bor/9233).
 
-For snapshot download links, see [<ins>Polygon Chains Snapshots</ins>](https://snapshots.matic.today/).
+For snapshot download links, see [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
 
 :::
 
@@ -75,12 +75,21 @@ There is limited space for accepting new validators. New validators can only joi
 
   :::
 
+
+:::info
+Please follow the steps on [<ins>bloXroute instructions</ins>](/maintain/validate/bloxroute.md) to connect your nodes to the bloXroute gateways.
+:::
+
 ## Overview
 
 To get to a running validator node, conduct the following in this **exact sequence of steps**:
 
-> You will run into configuration issues if these steps are performed out of sequence.
-> It is important to keep in mind that a sentry node must always be set up before the validator node.
+:::caution
+
+You will run into configuration issues if these steps are performed out of sequence.
+It is important to keep in mind that a sentry node must always be set up before the validator node.
+
+:::
 
 1. Prepare two machines, one for the sentry node and one for the validator node.
 2. Install the Heimdall and Bor binaries on the sentry and validator machines.
@@ -394,7 +403,7 @@ As mentioned earlier, the Heimdall service takes several days to sync from scrat
 Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours.
 For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](https://forum.polygon.technology/t/snapshot-instructions-for-heimdall-and-bor/9233).
 
-For snapshot download links, see [Polygon Chains Snapshots](https://snapshots.matic.today/).
+For snapshot download links, see [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
 
 :::
 
@@ -682,6 +691,12 @@ journalctl -u bor.service -f
 
 Now that your sentry and validator nodes are in sync and running, head over to
 [Discord](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes.
+
+:::note
+
+As validators, it’s mandatory to always have a check of the signer address. If the ETH balance reaches below 0.5 ETH then it should be refilled. Avoiding this will push out nodes from submitting checkpoint transactions.
+
+:::
 
 ## Next Steps: Staking
 

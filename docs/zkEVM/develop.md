@@ -1,7 +1,7 @@
 ---
 id: develop
 title: Start Building on Polygon zkEVM
-sidebar_label: Start Building
+sidebar_label: Develop
 description: A guide to help developers get started building on the Polygon zkEVM
 keywords:
   - docs
@@ -41,7 +41,7 @@ In order to add the **Polygon zkEVM** network to your wallet, you will need to e
 
 Also, for moving assets across chains, you will need to use the zkEVM Bridge. The bridge interface is available on [https://public.zkevm-test.net/](https://public.zkevm-test.net/). The Bridge API (for developers) is available at [https://bridge-api.public.zkevm-test.net/](https://bridge-api.public.zkevm-test.net/)
 
-Check out this video tutorial on how to add Polygon zkEVM Testnet to Metamask and deploy smart contracts:
+Check out this video tutorial on how to add Polygon zkEVM Testnet to MetaMask and deploy smart contracts:
 
 <video autoplay width="100%" height="100%" controls="true" >
   <source type="video/mp4" src="/img/zkevm/tutorial.mp4"></source>
