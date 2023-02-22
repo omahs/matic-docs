@@ -16,7 +16,7 @@ keywords:
 The below guide will instruct you on how to set up a Polygon Edge network on a cloud provider for a production setup of your testnet or mainnet.
 
 If you would like to setup a Polygon Edge network locally to quickly test the `polygon-edge` before doing a production-like setup, please refer to
-[Local Setup](/docs/edge/get-started/set-up-ibft-locally)
+**[Local Setup](/docs/edge/get-started/set-up-ibft-locally)**
 :::
 
 ## Requirements
@@ -78,7 +78,14 @@ node-3> polygon-edge secrets init --data-dir data-dir
 node-4> polygon-edge secrets init --data-dir data-dir
 ````
 
-Each of these commands will print the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need that information for the next step.
+Each of these commands will print the validator key, bls public key and the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need the Node ID of the first node for the next step.
+
+### Outputting Secrets 
+The secrets output can be retrieved again, if needed.
+
+```bash
+polygon-edge secrets output --data-dir test-chain-4
+```
 
 :::warning Keep your data directory to yourself!
 
@@ -145,13 +152,14 @@ you may securely generate the genesis.json with those validators in the initial 
 ```
 [SECRETS INIT]
 Public key (address) = 0xC12bB5d97A35c6919aC77C709d55F6aa60436900
+BLS Public key       = 0x9952735ca14734955e114a62e4c26a90bce42b4627a393418372968fa36e73a0ef8db68bba11ea967ff883e429b3bfdf
 Node ID              = 16Uiu2HAmVZnsqvTwuzC9Jd4iycpdnHdyVZJZTpVC8QuRSKmZdUrf
 ```
 
 Given that you have received all 4 of the validators' public keys, you can run the following command to generate the `genesis.json`
 
 ````bash
-polygon-edge genesis --consensus ibft --ibft-validator=0xC12bB5d97A35c6919aC77C709d55F6aa60436900 --ibft-validator=<2nd_validator_pubkey> --ibft-validator=<3rd_validator_pubkey> --ibft-validator=<4th_validator_pubkey> --bootnode=<first_bootnode_multiaddr_connection_string_from_step_2> --bootnode <second_bootnode_multiaddr_connection_string_from_step_2> --bootnode <optionally_more_bootnodes>
+polygon-edge genesis --consensus ibft --ibft-validator 0xC12bB5d97A35c6919aC77C709d55F6aa60436900:0x9952735ca14734955e114a62e4c26a90bce42b4627a393418372968fa36e73a0ef8db68bba11ea967ff883e429b3bfdf --ibft-validator <2nd validator IBFT public key>:<2nd validator BLS public key> --ibft-validator <3rd validator IBFT public key>:<3rd validator BLS public key> --ibft-validator <4th validator IBFT public key>:<4th validator BLS public key> --bootnode=<first_bootnode_multiaddr_connection_string_from_step_2> --bootnode <second_bootnode_multiaddr_connection_string_from_step_2> --bootnode <optionally_more_bootnodes>
 ````
 
 What this command does:
@@ -159,6 +167,15 @@ What this command does:
 * The `--ibft-validator` sets the public key of the validator that should be included in the initial validator set in the genesis block. There can be many initial validators.
 * The `--bootnode` sets the address of the bootnode that will enable the nodes to find each other.
   We will use the multiaddr string of the `node 1`, as mentioned in **step 2**, although you can add as many bootnodes as you want, as displayed above.
+
+:::info Switch to ECDSA
+
+BLS is the default validation mode of block headers. If you want your chain to run in ECDSA mode, you can use use the flag `—ibft-validator-type`, with the argument `ecdsa`:
+
+```
+genesis --ibft-validator-type ecdsa
+```
+:::
 
 :::info Premining account balances
 
@@ -181,18 +198,6 @@ For example, if we would like to premine 1000 ETH to address `0x3956E90e632AEbBF
 
 The default gas limit for each block is `5242880`. This value is written in the genesis file, but you may want to
 increase / decrease it.
-
-```go title="command/helper/helper.go"
-const (
-	GenesisFileName       = "./genesis.json"
-	DefaultChainName      = "example"
-	DefaultChainID        = 100
-	DefaultPremineBalance = "0x3635C9ADC5DEA00000"
-	DefaultConsensus      = "pow"
-	GenesisGasUsed        = 458752
-	GenesisGasLimit       = 5242880 // The default block gas limit
-)
-```
 
 To do so, you can use the flag `--block-gas-limit` followed by the desired value as shown below :
 
@@ -380,7 +385,7 @@ Example :
 ````bash
 polygon-edge server --config ./test/config-node1.json
 ````
-Currently, we only support `json` based configuration file, sample config file can be found [here](/docs/edge/configuration/sample-config)
+Currently, we only support `json` based configuration file, sample config file can be found **[here](/docs/edge/configuration/sample-config)**
 
 :::
 
@@ -418,4 +423,20 @@ polygon-edge server --price-limit 100000 ...
 
 It is worth noting that price limits **are enforced only on non-local transactions**, meaning
 that the price limit does not apply to transactions added locally on the node.
+:::
+
+:::info WebSocket URL
+By default, when you run the Polygon Edge, it generates a WebSocket URL based on the chain location.
+The URL scheme `wss://` is used for HTTPS links, and `ws://` for HTTP.
+
+Localhost WebSocket URL:
+````bash
+ws://localhost:10002/ws
+````
+Please note that the port number depends on the chosen JSON-RPC port for the node.
+
+Edgenet WebSocket URL:
+````bash
+wss://rpc-edgenet.polygon.technology/ws
+````
 :::

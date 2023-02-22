@@ -17,7 +17,7 @@ The below guide will instruct you on how to set up a Polygon Edge network on you
 purposes.
 
 The procedure differs greatly from the way you would want to set up Polygon Edge network for a real use scenario on
-a cloud provider: [Cloud Setup](/docs/edge/get-started/set-up-ibft-on-the-cloud)
+a cloud provider: **[Cloud Setup](/docs/edge/get-started/set-up-ibft-on-the-cloud)**
 
 :::
 
@@ -75,7 +75,14 @@ polygon-edge secrets init --data-dir test-chain-3
 polygon-edge secrets init --data-dir test-chain-4
 ````
 
-Each of these commands will print the validator key and the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need the Node ID of the first node for the next step.
+Each of these commands will print the validator key, bls public key and the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need the Node ID of the first node for the next step.
+
+### Outputting Secrets 
+The secrets output can be retrieved again, if needed.
+
+```bash
+polygon-edge secrets output --data-dir test-chain-4
+```
 
 ## Step 2: Prepare the multiaddr connection string for the bootnode
 
@@ -146,6 +153,14 @@ What this command does:
 
 The result of this command is the `genesis.json` file which contains the genesis block of our new blockchain, with the predefined validator set and the configuration for which node to contact first in order to establish connectivity.
 
+:::info Switch to ECDSA
+
+BLS is the default validation mode of block headers. If you want your chain to run in ECDSA mode, you can use use the flag `—ibft-validator-type`, with the argument `ecdsa`:
+
+```
+genesis --ibft-validator-type ecdsa
+```
+:::
 :::info Premining account balances
 
 You will probably want to set up your blockchain network with some addresses having "premined" balances.
@@ -167,18 +182,6 @@ For example, if we would like to premine 1000 ETH to address `0x3956E90e632AEbBF
 
 The default gas limit for each block is `5242880`. This value is written in the genesis file, but you may want to
 increase / decrease it.
-
-```go title="command/helper/helper.go"
-const (
-	GenesisFileName       = "./genesis.json"
-	DefaultChainName      = "example"
-	DefaultChainID        = 100
-	DefaultPremineBalance = "0x3635C9ADC5DEA00000"
-	DefaultConsensus      = "pow"
-	GenesisGasUsed        = 458752
-	GenesisGasLimit       = 5242880 // The default block gas limit
-)
-```
 
 To do so, you can use the flag `--block-gas-limit` followed by the desired value as shown below :
 
@@ -351,7 +354,7 @@ Example:
 ````bash
 polygon-edge server --config ./test/config-node1.json
 ````
-Currently, we only support `json` based configuration file, sample config file can be found [here](/docs/edge/configuration/sample-config)
+Currently, we support `yaml` and `json` based configuration files, sample config files can be found **[here](/docs/edge/configuration/sample-config)**
 
 :::
 
@@ -390,6 +393,24 @@ polygon-edge server --price-limit 100000 ...
 It is worth noting that price limits **are enforced only on non-local transactions**, meaning
 that the price limit does not apply to transactions added locally on the node.
 :::
+
+:::info WebSocket URL
+By default, when you run the Polygon Edge, it generates a WebSocket URL based on the chain location.
+The URL scheme `wss://` is used for HTTPS links, and `ws://` for HTTP.
+
+Localhost WebSocket URL:
+````bash
+ws://localhost:10002/ws
+````
+Please note that the port number depends on the chosen JSON-RPC port for the node.
+
+Edgenet WebSocket URL:
+````bash
+wss://rpc-edgenet.polygon.technology/ws
+````
+:::
+
+
 
 ## Step 5: Interact with the polygon-edge network
 

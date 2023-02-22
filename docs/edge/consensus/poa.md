@@ -23,7 +23,7 @@ Besides validators, there are non-validators who do not participate in the block
 ## Adding a validator to the validator-set
 
 This guide describes how to add a new validator node to an active IBFT network with 4 validator nodes.
-If you need help setting up the the network refer to the [Local Setup](/docs/edge/get-started/set-up-ibft-locally) / [Cloud Setup](/docs/edge/get-started/set-up-ibft-on-the-cloud) sections.
+If you need help setting up the network refer to the [Local Setup](/edge/get-started/set-up-ibft-locally.md) / [Cloud Setup](/edge/get-started/set-up-ibft-on-the-cloud.md) sections.
 
 ### Step 1: Initialize data folders for IBFT and generate validator keys​ for the new node
 
@@ -42,10 +42,14 @@ For a new node to become a validator at least 51% of validators need to propose 
 Example of how to propose a new validator (`0x8B15464F8233F718c8605B16eBADA6fc09181fC2`) from the existing validator node on grpc address: 127.0.0.1:10000:
 
 ````bash
-polygon-edge ibft propose --grpc-address 127.0.0.1:10000 --addr 0x8B15464F8233F718c8605B16eBADA6fc09181fC2 --vote auth
+polygon-edge ibft propose --grpc-address 127.0.0.1:10000 --addr 0x8B15464F8233F718c8605B16eBADA6fc09181fC2 --bls 0x9952735ca14734955e114a62e4c26a90bce42b4627a393418372968fa36e73a0ef8db68bba11ea967ff883e429b3bfdf --vote auth
 ````
 
 The structure of the IBFT commands is covered in the [CLI Commands](/docs/edge/get-started/cli-commands) section.
+
+:::info BLS public key
+BLS public key is only necessary if the network is running with the BLS, for the network not running in BLS mode `--bls` is unnecessary
+:::
 
 ### Step 3: Run the client node
 
@@ -72,8 +76,12 @@ Naturally, a non-validator can become a validator by the voting process, but for
 This operation is fairly simple. To remove a validator node from the validator-set, this command needs to be performed for the majority of the validator nodes.
 
 ````bash
-polygon-edge ibft propose --grpc-address 127.0.0.1:10000 --addr 0x8B15464F8233F718c8605B16eBADA6fc09181fC2 --vote drop
+polygon-edge ibft propose --grpc-address 127.0.0.1:10000 --addr 0x8B15464F8233F718c8605B16eBADA6fc09181fC2 --bls 0x9952735ca14734955e114a62e4c26a90bce42b4627a393418372968fa36e73a0ef8db68bba11ea967ff883e429b3bfdf --vote drop
 ````
+
+:::info BLS public key
+BLS public key is only necessary if the network is running with the BLS, for the network not running in BLS mode `--bls` is unnecessary
+:::
 
 After the commands are performed, observe that the number of validators has dropped (in this log example from 4 to 3).
 

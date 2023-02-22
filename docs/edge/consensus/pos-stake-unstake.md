@@ -17,7 +17,7 @@ keywords:
 This guide goes into detail on how to set up a Proof of Stake network with the Polygon Edge, how to stake funds for nodes
 to become validators and how to unstake funds.
 
-It **highly encouraged** to read and go through
+It is **highly encouraged** to read and go through
 the [Local Setup](/docs/edge/get-started/set-up-ibft-locally)
 / [Cloud Setup](/docs/edge/get-started/set-up-ibft-on-the-cloud) sections, before going along
 with this PoS guide. These sections outline the steps needed to start a Proof of Authority (PoA) cluster with the
@@ -93,14 +93,16 @@ Create an `.env` file with the following parameters in the Smart Contracts repo 
 JSONRPC_URL=http://localhost:10002
 PRIVATE_KEYS=0x0454f3ec51e7d6971fc345998bb2ba483a8d9d30d46ad890434e6f88ecb97544
 STAKING_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
+BLS_PUBLIC_KEY=0xa..
 ```
 
 Where the parameters are:
 
 * **JSONRPC_URL** - the JSON-RPC endpoint for the running node
-* **PRIVATE_KEYS** - private keys of the staker address
+* **PRIVATE_KEYS** - private keys of the staker address.
 * **STAKING_CONTRACT_ADDRESS** - the address of the staking smart contract (
   default `0x0000000000000000000000000000000000001001`)
+* **BLS_PUBLIC_KEY** - BLS public key of the staker. Only needed if the network is running with BLS
 
 ### Staking funds
 
@@ -111,7 +113,7 @@ address `0x0000000000000000000000000000000000001001`.
 Any kind of interaction with the staking mechanism is done through the Staking Smart Contract at the specified address.
 
 To learn more about the Staking Smart Contract, please visit
-the [Staking Smart Contract](/docs/edge/consensus/pos-concepts#contract-pre-deployment)
+the **[Staking Smart Contract](/docs/edge/consensus/pos-concepts#contract-pre-deployment)**
 section.
 :::
 
@@ -134,6 +136,16 @@ file.
 
 If the funds being staked are `>= 1 ETH`, the validator set on the Staking Smart Contract is updated, and the address
 will be part of the validator set starting from the next epoch.
+
+:::info Registering BLS keys
+If the network is running in BLS mode, in order for nodes to become validators, they need to register their BLS public keys after staking
+
+This can be done with the following command:
+
+```bash
+npm run register-blskey
+```
+:::
 
 ### Unstaking funds
 

@@ -6,19 +6,19 @@ description: Build your next blockchain app on Polygon.
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://wiki.polygon.technology/img/polygon-wiki.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### How to stake tokens on Polygon?
 
-For Staking you would need to have funds on the Ethereum Mainnet (more information [here](https://etherscan.io/gastracker)). Log into Metamask on the Ethereum network using the Staking Dashboard. https://wallet.polygon.technology/staking/
+For Staking you would need to have funds on the Ethereum Mainnet (more information [here](https://etherscan.io/gastracker)). Log into MetaMask on the Ethereum network using the Staking Dashboard. https://staking.polygon.technology/
 
 Please watch this video for a graphical illustration of how this works:
 
 <video autoplay width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="/img/staking_faq/staking.mov"></source>
+  <source type="video/mp4" src="/img/staking/staking.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -27,8 +27,8 @@ You can navigate to "Your Delegations", choose one of the stakes and click on "S
 
 Please watch this video for a graphical illustration of how this works:
 
-<video loop autoplay width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="/img/staking_faq/stakingmore.mov"></source>
+<video width="70%" height="70%" controls="true" >
+  <source type="video/mp4" src="/img/staking_faq/staking-more.mov"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -38,13 +38,17 @@ Check if you have funds on the Main Ethereum Network, to delegate your tokens. A
 
 ### I am unable to view the Staking tab. How do I access Staking?
 
-Once logged into https://wallet.polygon.technology/ you need to  click on apps > staking. Users will be landed on the staking overview page. Reference for guide:
+You just need to access **https://staking.polygon.technology/**, where you will see the following landing page:
 
-<img src={useBaseUrl("img/staking_faq/stakingApp.png")} height="500px"/>
+<img src={useBaseUrl("img/staking_faq/staking-lp.png")} height="500px"/>
+
+Alternatively, once logged into the [Polygon Wallet Suite](https://wallet.polygon.technology/), you can click on **More Apps > Staking**. Users will be landed on the **Staking Overview** page. Reference for guide:
+
+<img src={useBaseUrl("img/staking_faq/staking-app.png")} height="500px"/>
 
 ### How do I know which Validator to select for better rewards?
 
-It depends on your understanding and research on which validator you would want to stake on. You can find the list of validators here : https://wallet.polygon.technology/staking/validators
+It depends on your understanding and research on which validator you would want to stake on. You can find the list of validators here : https://staking.polygon.technology/validators
 
 ### How to unbond?
 
@@ -60,7 +64,7 @@ There you will see an Unbond button for each of the validators. Click on the Unb
 Please watch the video for a graphical illustration of how this works:
 
 <video width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="/img/staking_faq/unbonding.mov"></source>
+  <source type="video/mp4" src="/img/staking/unbond.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -72,18 +76,18 @@ This period applies to the originally delegated amount and re-delegated amounts.
 ### How to restake rewards?
 
 Go to “My Account” to check "Your Delegations".
-Clicking on "Restake Reward" will ask you for confirmation from your Metamask account. Once you confirm the transaction, only then the restake transaction would be complete.
+Clicking on "Restake Reward" will ask you for confirmation from your MetaMask account. Once you confirm the transaction, only then the restake transaction would be complete.
 
 `Step 1` <br/>
-<img src={useBaseUrl("img/staking_faq/Restakerewards1.png")} height="300px"/><br/>
+<img src={useBaseUrl("img/staking_faq/restake-rewards1.png")} height="300px"/><br/>
 
 `Step 2` <br/>
-<img src={useBaseUrl("img/staking_faq/Restakerewards2.png")} height="415px"/><br/>
+<img src={useBaseUrl("img/staking_faq/restake-rewards2.png")} height="415px"/><br/>
 
 Please watch the video for a graphical illustration of how this works:
 
 <video width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="/img/staking_faq/RestakingRewards.mov"></source>
+  <source type="video/mp4" src="/img/staking/restake.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -96,15 +100,15 @@ You would need to have a minimum of **2 Matic** to restake rewards.
 You can claim your rewards by clicking on the “My Account”, all the delegators for a validator are displayed. Click on the “Withdraw Reward” button and the rewards will be transferred to your delegated account on Metamask. 
 
 `Step 1` <br/>
-<img src={useBaseUrl("img/staking_faq/Withdraw1.png")} height="300px"/><br/>
+<img src={useBaseUrl("img/staking_faq/withdraw1.png")} height="300px"/><br/>
 
 `Step 2` <br/>
-<img src={useBaseUrl("img/staking_faq/Withdraw2.png")} height="380px"/><br/>
+<img src={useBaseUrl("img/staking_faq/withdraw2.png")} height="380px"/><br/>
 
 Please watch the video for a graphical illustration of how this works:
 
 <video width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="/img/staking_faq/Withdraw.mov"></source>
+  <source type="video/mp4" src="/img/staking_faq/claim-rewards.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -117,24 +121,24 @@ You would need to have a minimum of **2 Matic** to withdraw rewards.
 Once the **unbonding period is complete**, the Claim Stake button will be enabled and you can then claim your staked tokens. The tokens will be transferred to your account.
 
 `Step 1` <br/>
-<img src={useBaseUrl("img/staking_faq/claimstake1.png")} height="400px"/><br/>
+<img src={useBaseUrl("img/staking_faq/claim-stake1.png")} height="400px"/><br/>
 
 `Step 2` <br/>
-<img src={useBaseUrl("img/staking_faq/claimstake2.png")} height="300px"/><br/>
+<img src={useBaseUrl("img/staking_faq/claim-stake2.png")} height="300px"/><br/>
 
 `Step 3` <br/>
-<img src={useBaseUrl("img/staking_faq/claimstake3.png")} height="400px"/><br/>
+<img src={useBaseUrl("img/staking_faq/claim-stake3.png")} height="400px"/><br/>
 
 Please watch the video for a graphical illustration of how this works:
 
 <video width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="/img/staking_faq/ClaimingStake.mov"></source>
+  <source type="video/mp4" src="/img/staking_faq/claiming-stake.mov"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
 ### Are hardware wallets supported?
 
-Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on Metamask and connect your Hardware wallet and then continue the delegation process.
+Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on MetaMask and connect your Hardware wallet and then continue the delegation process.
 
 ### Why can’t I stake directly from Binance?
 
@@ -171,7 +175,7 @@ No. Once you unbond you stop receiving rewards.
 Please watch the video for a graphical illustration of how this works:
 
 <video width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="/img/staking_faq/movingStake.mov"></source>
+  <source type="video/mp4" src="/img/staking_faq/moving.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -179,10 +183,10 @@ Please watch the video for a graphical illustration of how this works:
 
 Chrome, Firefox, and Brave.
 
-### Nothing happens when I try to log in or my Metamask is stuck at confirming after logging in. What do I do?
+### Nothing happens when I try to log in or my MetaMask is stuck at confirming after logging in. What do I do?
 
 Check for the following:
 - If you’re using Brave, please turn off the option for “Use Crypto Wallets” in the settings panel.
 - Check if you are logged into Metamask.
-- Check if you are logged into Metamask with Trezor/Ledger. You need to additionally turn on permission to call contracts on your Ledger device, if not enabled already.
+- Check if you are logged into MetaMask with Trezor/Ledger. You need to additionally turn on permission to call contracts on your Ledger device, if not enabled already.
 - Check your system timestamp. If the system time is not correct, you will need to correct it.

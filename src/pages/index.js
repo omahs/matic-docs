@@ -67,6 +67,25 @@ function SecondRow({ title, status, description, linkUrl, imageUrl }) {
   );
 }
 
+function BigBlock({title, status, description, linkUrl, imageUrl}) {
+  return (
+    <div className="col-md-12 p-8" style={{textAlign: 'center'}}>
+      <Link to={useBaseUrl(linkUrl)} activeClassName="active">
+        <div className="show-card">
+          <div className="big-block-content">
+            <img src={useBaseUrl(imageUrl)} alt={title} className="icon" />
+            <div className="text">
+              <div className="status">{status}</div>
+              <div className="title">{title}</div>
+              <div className="descriptions">{description}</div>
+            </div>
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+}
+
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
@@ -86,7 +105,7 @@ defaultValue="beginner"
 className="tabs"
 values={[
 {label: 'Choose a Hub', value: 'beginner'},
-{label: 'Browse by Product', value: 'products'},
+{label: 'Browse by Protocol', value: 'protocols'},
 ]}>
 
 <TabItem value="beginner">
@@ -112,7 +131,7 @@ networkBanner.map((props, idx) => (
       ))}{" "}
   </div>
 </TabItem>
-<TabItem value="products">
+<TabItem value="protocols">
 <div className="row pt-40">
     {networkBanner &&
       networkBanner.length &&
@@ -121,6 +140,7 @@ networkBanner.map((props, idx) => (
       ))}{" "}
   </div>
   <div className="row">
+  <BigBlock title={'Polygon zkEVM'} description={'Polygon zkEVM is the first Zero-Knowledge Rollup with publicly accessible source code offering complete EVM opcode equivalence for a frictionless user experience and the security of Ethereum.'} linkUrl={'docs/zkEVM/introduction/'} imageUrl={'img/hermez.svg'} />
     {secondRow &&
       secondRow.length &&
       secondRow.map((props, idx) => (

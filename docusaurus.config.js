@@ -2,9 +2,9 @@ const math = require('remark-math');
 const katex = require('rehype-katex');
 
 module.exports = {
-  title: "Polygon Technology | Documentation",
-  tagline: "Welcome to Polygon developer documentation",
-  url: "https://docs.polygon.technology/",
+  title: "Polygon Wiki",
+  tagline: "The official documentation for all Polygon products.",
+  url: "https://wiki.polygon.technology",
   baseUrl: "/",
   favicon: "img/polygon/polygon-logo.svg",
   organizationName: "Polygon Technology",
@@ -87,12 +87,32 @@ module.exports = {
             from: '/docs/integrate/full-node-deployment',
           },
           {
-            to: '/docs/develop/wallets/metamask',
-            from:'/docs/develop/metamask/overview',
-          },
-          {
             to: '/docs/develop/wallets/getting-started',
             from: '/docs/develop/cexs-wallets/cexs',
+          },
+          {
+            to: '/docs/develop/wallets/polygon-web-wallet/web-wallet-v3-guide',
+            from: '/docs/develop/wallets/polygon-web-wallet/web-wallet-v2-guide',
+          },
+          {
+            to: '/docs/faq/general-faq/',
+            from: '/docs/category/faq/'
+          },
+          {
+            to:'/docs/maintain/validate/kb/known-issues',
+            from:'/docs/maintain/validate/faq/known-issues'
+          },
+          {
+            to:'/docs/maintain/validate/kb/how-to',
+            from:'/docs/maintain/validate/faq/how-to'
+          },
+          {
+            to:'/docs/faq/validator-faq',
+            from:'/docs/maintain/validate/faq/validator-faq'
+          },
+          {
+            to:'/docs/maintain/validator/responsibilities',
+            from:'/docs/maintain/validate/validator-responsibilities'
           }
         ],
         createRedirects: function (existingPath) {
@@ -106,6 +126,7 @@ module.exports = {
   ],
   onBrokenLinks: 'log',
   themeConfig: {
+    metadata: [{name: 'description', content: 'Welcome to Polygon Wiki, the official documentation for Polygon and its products. Explore and learn about Polygon and its wide range of Ethereum-scaling solutions.'}],
     footer: {
       style: 'dark',
       links: [
@@ -133,10 +154,6 @@ module.exports = {
             href: "https://polygon.technology/solutions/polygon-avail/"
           },
           {
-              label: "Polygon Nightfall",
-              href: "https://polygon.technology/solutions/polygon-nightfall/"
-          },
-          {
             label: "Polygon Zero",
             href: "https://polygon.technology/solutions/polygon-zero/"
           },
@@ -151,7 +168,7 @@ module.exports = {
           items: [
           {
               label: "Get Started",
-              href: "https://docs.polygon.technology/docs/develop/getting-started/"
+              href: "https://wiki.polygon.technology/docs/develop/getting-started/"
           },
           {
               label: "Advocate Program",
@@ -217,7 +234,7 @@ module.exports = {
       {
         label: "Ecosystem Careers",
         href: "https://ecosystemjobs.polygon.technology/jobs/"
-    },
+      },
     ]
     },
     ],
@@ -228,7 +245,7 @@ module.exports = {
     },
     copyright: `Copyright © ${new Date().getFullYear()} Polygon Technology`,
     },
-    image: "https://matic.network/banners/matic-network-16x9.png",
+    image: 'img/polygon-wiki.png',
     prism: {
       theme: require("prism-react-renderer/themes/github"),
       darkTheme: require("prism-react-renderer/themes/dracula"),
@@ -250,7 +267,7 @@ module.exports = {
         srcDark: "/img/polygon/polygon-logo.webp",
         // width: 100,
         // height: 500,
-        // href: 'https://docs.polygon.technology/', // default to siteConfig.baseUrl
+        // href: 'https://wiki.polygon.technology/', // default to siteConfig.baseUrl
         target: "_self", // by default, this value is calculated based on the `href` attribute (the external link will open in a new tab, all others in the current one)
       },
       items: [
@@ -259,26 +276,20 @@ module.exports = {
           position: "right",
           items: [
                   {
-                    href: 'https://wallet.polygon.technology/login?next=%2Fwallet',
+                    href: 'https://wallet.polygon.technology',
                     label: 'PoS Wallet',
                     target: '_blank',
                     rel: null,
                   },
                   {
-                    href: 'https://wallet.polygon.technology/login?next=%2Fbridge',
+                    href: 'https://wallet.polygon.technology/polygon/bridge/deposit',
                     label: 'PoS Bridge',
                     target: '_blank',
                     rel: null,
                   },
                   {
-                    href: 'https://polygon.technology/staking',
+                    href: 'https://staking.polygon.technology/',
                     label: 'PoS Staking',
-                    target: '_blank',
-                    rel: null,
-                  },
-                  {
-                    href: 'https://wallet.polygon.technology/login?next=%2Fwidget-dashboard',
-                    label: 'PoS Widget',
                     target: '_blank',
                     rel: null,
                   },
@@ -289,7 +300,7 @@ module.exports = {
                     rel: null,
                   },
                   {
-                    href: 'https://hermez.io/wallet',
+                    href: 'https://wallet.hermez.io/login',
                     label: 'Hermez Wallet',
                     target: '_blank',
                     rel: null,
@@ -311,6 +322,13 @@ module.exports = {
           label: "Community",
           position: "right",
           items: [
+                  {
+                    to: "docs/contribute/orientation/",
+                    label: "Contribute to Wiki",
+                    target: '_blank',
+                    rel: null,
+                    activeBasePath: "docs/contribute",
+                  },
                   {
                     href: 'https://discord.com/invite/0xPolygon',
                     label: 'Discord',
@@ -342,6 +360,12 @@ module.exports = {
                     rel: null,
                   },
                   {
+                    label: "Get Updates",
+                    href: 'https://polygon.technology/notifications/',
+                    target: '_blank',
+                    rel: null,
+                  },
+                  {
                     href: 'https://polygon.technology/community/',
                     label: 'View all communities',
                     target: '_blank',
@@ -362,11 +386,6 @@ module.exports = {
           ]
         },
         {
-          label: "Notifications",
-          href: 'https://polygon.technology/notifications/',
-          position: "right",
-        },
-        {
           label: "FAQs",
           position: "right",
           items: [
@@ -383,24 +402,12 @@ module.exports = {
                     rel: null,
                   },
                   {
-                    to: 'docs/nightfall/faq/',
-                    label: 'Nightfall FAQ',
-                    target: '_blank',
-                    rel: null,
-                  },
-                  {
                     to: 'docs/edge/faq/validators/',
                     label: 'Edge FAQ',
                     target: '_blank',
                     rel: null,
                   }
                 ],
-        },
-        {
-          to: "docs/contribute/orientation/",
-          label: "Contribute to the Wiki",
-          position: "right",
-          activeBasePath: "docs/contribute",
         },
         {
           href: "https://github.com/maticnetwork",
@@ -435,10 +442,14 @@ module.exports = {
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
           remarkPlugins: [math],
-          rehypePlugins: [katex],
+          rehypePlugins: [[katex, {strict: false, throwOnError: true,globalGroup: true}]],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+        },
+        gtag: {
+          trackingID: 'G-LLNECLTBDN',
+          anonymizeIP: true,
         },
       },
       // "@docuaurus/plugin-content-pages",
